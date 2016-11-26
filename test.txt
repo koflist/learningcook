@@ -3,4 +3,4 @@
 # i want to know this is not dev branch
 
 # current branch is dev
-# try to merge conflics
+# try to merge conflics something
