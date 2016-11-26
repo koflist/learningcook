@@ -3,5 +3,5 @@
 # i want to know this is not dev branch
 
 # current branch is dev 
-# try to merge conflics balhbal
+# try to merge conflics balhbal somethings
 
