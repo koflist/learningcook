@@ -1,0 +1,139 @@
+/**
+ * import lib less
+ */
+
+@import url(./_base/reset.less);
+@import url(./_base/default.less);
+@import url(./_base/hover.less);
+@import url(./_base/header.less);
+@import url(./_base/footer.less);
+body {
+    overflow-y: auto;
+}
+
+
+/**
+* custome variable
+* font-family / color
+*/
+
+@customeFont: 'custome';
+@themeColorRed: #FB5353;
+
+/**
+* import lib font
+*/
+
+@font-face {
+    font-family: @customeFont;
+    src: url(./_font/title.woff2);
+}
+
+
+/*
+* 
+*/
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+@media (min-width: @screen-sm-min) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: @screen-md-min) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: @screen-lg-min) {
+    .container {
+        width: 1170px;
+    }
+}
+
+section {
+    width: 48%;
+}
+
+
+/*
+*  main content
+*/
+
+main[role="content"] {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    overflow: hidden;
+    //
+    > ul.row1 {
+        float: left;
+        width: 50%;
+    }
+    //
+    > ul.row2 {
+        float: right;
+        width: 50%;
+    }
+    //
+    &:after,
+    &:before {
+        clear: both;
+        content: " ";
+    }
+}
+
+//movie content container
+main[role="content"] figure.poster_container {
+    position: relative;
+    margin-bottom: 60px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #fff;
+    text-align: center;
+    transition: 0.6s;
+    //img
+    img {
+        width: 100%;
+        transition: 2s;
+    }
+    //text position
+    h1,
+    p {
+        position: absolute;
+    }
+    //h1
+    h1 {
+        top: -40px;
+        color: #fff;
+        font-size: 36px;
+        font-family: 'custome';
+        visibility: hidden;
+        transition: 1.6s;
+    }
+}
+
+//movie content container hover
+main[role="content"] figure.poster_container:hover {
+    #_base_hover > .pointer-none;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #000;
+    img {
+        opacity: 0.4;
+    }
+    h1 {
+        visibility: visible;
+        top: 40px;
+    }
+}

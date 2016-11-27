@@ -1,0 +1,567 @@
+/**
+ * import lib less
+ */
+html,
+body {
+  line-height: 1.5;
+  font-family: Microsoft YaHei, arial, "宋体";
+  background: #ffffff;
+  font-size: 14px;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+ol,
+ul {
+  list-style: none;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var,
+optgroup {
+  font-style: normal;
+}
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  *font-size: 100%;
+}
+html {
+  height: 100%;
+  overflow-y: hidden;
+}
+body {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+select {
+  font-size: 14px;
+}
+fieldset,
+img,
+a img,
+:link img,
+:visited img {
+  border: 0;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+:focus {
+  outline: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th {
+  text-align: left;
+}
+sup,
+sub {
+  font-size: 100%;
+  vertical-align: baseline;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+.clear,
+.clearfix:after {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  display: block;
+}
+.clearfix:after {
+  visibility: hidden;
+  content: ".";
+}
+.clearfix {
+  *zoom: 1;
+}
+/**
+ * hover style definition
+ *
+ * @param {cursor} : none / pointer
+ * @param {text-decoration} : none / underline
+ *
+ */
+#_base_hover .pointer {
+  cursor: pointer;
+}
+#_base_hover .none-none {
+  cursor: default;
+  text-decoration: none;
+}
+#_base_hover .none-underline {
+  cursor: default;
+  text-decoration: underline;
+}
+#_base_hover .pointer-none {
+  cursor: pointer;
+  text-decoration: none;
+}
+#_base_hover .pointer-underline {
+  cursor: pointer;
+  text-decoration: underline;
+}
+/*
+* a 无下划线 鼠标变为指向
+* 
+* @param {text-decoration} none
+* @param {cursor} pointer
+*/
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+/**
+ * -----> Header Style <-----
+ * Logo + NavButton + NavList
+ */
+header[role="header"] {
+  width: 100%;
+  padding: 80px 0 20px 0;
+}
+div.container > a {
+  display: inline-block;
+  width: 171px;
+  height: 56px;
+  background: url(_images/index/header_icon.png) no-repeat center;
+}
+div.container > nav[role="header-nav"] {
+  display: inline-block;
+  float: right;
+  padding-top: 18px;
+}
+div.header-nav-button {
+  z-index: 201;
+  float: right;
+  width: 35px;
+  height: 25px;
+  position: relative;
+}
+div.header-nav-button:hover {
+  cursor: pointer;
+}
+div.header-nav-button i {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  background-color: #010101;
+  left: 0px;
+  opacity: 1;
+  transition: 0.25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+}
+div.header-nav-button i:nth-child(2) {
+  top: 10px;
+  transition: 0.4s;
+}
+div.header-nav-button i:nth-child(3) {
+  top: 20px;
+}
+div.header-nav-button-opened i:nth-child(1) {
+  top: 10px;
+  transform: rotate(135deg);
+}
+div.header-nav-button-opened i:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+div.header-nav-button-opened i:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
+}
+ul.header-nav-menu {
+  background-color: rgba(155, 255, 255, 0.6);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  text-align: center;
+  transition: 0.6s;
+}
+ul.header-nav-menu-opened {
+  z-index: 200;
+  top: 0px;
+  padding-top: 10%;
+  height: 100%;
+}
+ul.header-nav-menu li {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  font-size: 40px;
+  font-weight: 800;
+  transition: 0.6s;
+  cursor: pointer;
+}
+ul.header-nav-menu li a {
+  text-decoration: none;
+  color: #888;
+  transition: 0.6s;
+}
+ul.header-nav-menu li:nth-child(1) {
+  cursor: default;
+  text-decoration: none;
+  color: #FB5353;
+}
+ul.header-nav-menu li:hover > a {
+  font-size: 42px;
+}
+ul.header-nav-menu li:nth-child(2):hover > a {
+  color: #FF9966;
+}
+ul.header-nav-menu li:nth-child(3):hover > a {
+  color: #6699CC;
+}
+ul.header-nav-menu li:nth-child(4):hover > a {
+  color: #669933;
+}
+ul.header-nav-menu li:nth-child(5):hover > a {
+  color: #FF3399;
+}
+/**
+* -----> Footer Style <-----
+* Logo + NavList + Copyright
+*/
+@keyframes shock {
+  5% {
+    transform: rotate(8deg);
+  }
+  15% {
+    transform: rotate(-8deg);
+  }
+  25% {
+    transform: rotate(6deg);
+  }
+  35% {
+    transform: rotate(-6deg);
+  }
+  45% {
+    transform: rotate(4deg);
+  }
+  55% {
+    transform: rotate(-4deg);
+  }
+  65% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  85% {
+    transform: rotate(1deg);
+  }
+  95% {
+    transform: rotate(-1deg);
+  }
+}
+footer[role="footer"] {
+  padding-top: 100px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+footer[role="footer"] ul > li {
+  display: inline-block;
+  padding: 0 10px;
+}
+footer[role="footer"] > a {
+  display: block;
+}
+footer[role="footer"] > a > img {
+  cursor: pointer;
+}
+footer[role="footer"] > a > img:hover {
+  animation: shock 1s;
+}
+footer[role="footer"] > nav[role="nav"] > ul {
+  padding-top: 40px;
+}
+footer[role="footer"] > nav[role="nav"] > ul li > a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #9D9D9D;
+  transition: 1s;
+}
+footer[role="footer"] > nav[role="nav"] > ul li:hover > a {
+  color: #FB5353;
+  text-decoration: none;
+}
+footer[role="footer"] > p[role="copyright"] {
+  padding-top: 40px;
+  color: #aaa;
+  font-size: 14px;
+}
+body {
+  overflow-y: auto;
+}
+/**
+* custome variable
+* font-family / color
+*/
+/**
+* import lib font
+*/
+@font-face {
+  font-family: 'custome';
+  src: url(_font/title.woff2);
+}
+/**
+* custome default style
+*
+*/
+p,
+h1,
+span {
+  cursor: default;
+  text-decoration: none;
+}
+div[role="hi"] > label {
+  position: fixed;
+  top: 10%;
+  left: 1%;
+  z-index: 999;
+  opacity: 0;
+  color: #CCC;
+  transition: 1s;
+  cursor: default;
+  text-decoration: none;
+}
+div[role="hi"] > label:hover {
+  opacity: 0.5;
+  color: #666;
+}
+/**
+ * -----> Content Part <-----
+ * main section
+ */
+main[role="content-wrapper"] {
+  overflow-y: auto;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+main[role="content-wrapper"] > div > section {
+  padding: 12px 10px;
+}
+main[role="content-wrapper"] > div > section.index-title {
+  padding-left: 50px;
+  padding-top: 50px;
+}
+main[role="content-wrapper"] > div > section.index-title h1 {
+  font-family: 'custome';
+  font-size: 40px;
+  font-weight: 800;
+  color: #404040;
+}
+main[role="content-wrapper"] > div > section.index-title h1 > span {
+  display: block;
+  font-family: inherit;
+  font-size: 60px;
+  font-weight: 800;
+  color: #FB5353;
+}
+main[role="content-wrapper"] > div > section.index-title p {
+  margin-top: 25px;
+  font-family: 'custome';
+  font-size: 20px;
+  font-weight: 600;
+  color: #454545;
+}
+main[role="content-wrapper"] > div > section > figure {
+  height: 256px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+main[role="content-wrapper"] > div > section > figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+2) > figure,
+main[role="content-wrapper"] > div > section:nth-child(4n+3) > figure {
+  background-color: rgba(255, 255, 166, 0.5);
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+2) > figure p,
+main[role="content-wrapper"] > div > section:nth-child(4n+3) > figure p {
+  color: #FF6666;
+  font-size: 20px;
+  font-weight: 800;
+  transition: 0.6s;
+  position: absolute;
+  opacity: 0;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+2) > figure figcaption p:nth-child(1),
+main[role="content-wrapper"] > div > section:nth-child(4n+3) > figure figcaption p:nth-child(1) {
+  left: 2%;
+  top: 6%;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+2) > figure figcaption p:nth-child(2),
+main[role="content-wrapper"] > div > section:nth-child(4n+3) > figure figcaption p:nth-child(2) {
+  right: 2%;
+  bottom: 6%;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+2) > figure img,
+main[role="content-wrapper"] > div > section:nth-child(4n+3) > figure img {
+  transition: 0.6s;
+  transform: scale(0.9);
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+2) > figure:before,
+main[role="content-wrapper"] > div > section:nth-child(4n+3) > figure:before {
+  position: absolute;
+  border: 4px solid #FF6666;
+  height: 40%;
+  width: 40%;
+  top: 30%;
+  left: 30%;
+  content: " ";
+  transition: 0.4s;
+  opacity: 0;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+2) > figure:hover,
+main[role="content-wrapper"] > div > section:nth-child(4n+3) > figure:hover {
+  background-color: rgba(255, 255, 102, 0.5);
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+2) > figure:hover img,
+main[role="content-wrapper"] > div > section:nth-child(4n+3) > figure:hover img {
+  transform: scale(1);
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+2) > figure:hover figcaption p:nth-child(1),
+main[role="content-wrapper"] > div > section:nth-child(4n+3) > figure:hover figcaption p:nth-child(1) {
+  opacity: 1;
+  left: 5%;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+2) > figure:hover figcaption p:nth-child(2),
+main[role="content-wrapper"] > div > section:nth-child(4n+3) > figure:hover figcaption p:nth-child(2) {
+  opacity: 1;
+  right: 5%;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+2) > figure:hover:before,
+main[role="content-wrapper"] > div > section:nth-child(4n+3) > figure:hover:before {
+  opacity: 0.8;
+  height: 96%;
+  width: 96%;
+  top: 2%;
+  left: 2%;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+4) > figure figcaption p,
+main[role="content-wrapper"] > div > section:nth-child(4n+5) > figure figcaption p {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 1s;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+4) > figure figcaption i,
+main[role="content-wrapper"] > div > section:nth-child(4n+5) > figure figcaption i {
+  opacity: 0;
+  transition: 0.6s;
+  font-size: 16px;
+  font-weight: 800;
+  color: #333333;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+4) > figure figcaption i:nth-child(1),
+main[role="content-wrapper"] > div > section:nth-child(4n+5) > figure figcaption i:nth-child(1) {
+  transition-delay: 0s;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+4) > figure figcaption i:nth-child(2),
+main[role="content-wrapper"] > div > section:nth-child(4n+5) > figure figcaption i:nth-child(2) {
+  transition-delay: 0.1s;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+4) > figure figcaption i:nth-child(3),
+main[role="content-wrapper"] > div > section:nth-child(4n+5) > figure figcaption i:nth-child(3) {
+  transition-delay: 0.2s;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+4) > figure figcaption i:nth-child(4),
+main[role="content-wrapper"] > div > section:nth-child(4n+5) > figure figcaption i:nth-child(4) {
+  transition-delay: 0.3s;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+4) > figure figcaption i:nth-child(5),
+main[role="content-wrapper"] > div > section:nth-child(4n+5) > figure figcaption i:nth-child(5) {
+  transition-delay: 0.4s;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+4) > figure img,
+main[role="content-wrapper"] > div > section:nth-child(4n+5) > figure img {
+  transition: 1s;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+4) > figure:hover img,
+main[role="content-wrapper"] > div > section:nth-child(4n+5) > figure:hover img {
+  opacity: 0.7;
+  transform: rotate(360deg) scale(0.9);
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+4) > figure:hover figcaption > p,
+main[role="content-wrapper"] > div > section:nth-child(4n+5) > figure:hover figcaption > p {
+  top: 48%;
+}
+main[role="content-wrapper"] > div > section:nth-child(4n+4) > figure:hover figcaption > p i,
+main[role="content-wrapper"] > div > section:nth-child(4n+5) > figure:hover figcaption > p i {
+  font-size: 32px;
+  opacity: 1;
+}
