@@ -2,12 +2,10 @@
  * import lib less
  */
 
-@import url(./_base/reset.less);
-@import url(./_base/hover.less);
-@import url(./_base/default.less);
+@import url(./_base/_commonStyle/_common.less);
+@import url(./_base/_customeStyle/hover.less);
 @import url(./_base/header.less);
 @import url(./_base/footer.less);
-
 body {
     overflow-y: auto;
 }
@@ -49,13 +47,14 @@ div[role="hi"] > label {
     z-index: 999;
     opacity: 0;
     color: #CCC;
-    transition:1s;
+    transition: 1s;
     #_base_hover > .none-none;
     &:hover {
         opacity: 0.5;
         color: #666;
     }
 }
+
 
 /**
  * -----> Content Part <-----
@@ -115,6 +114,14 @@ main[role="content-wrapper"] > div > section > figure {
         left: 0;
         width: 100%;
         height: 100%;
+        //点击链接
+        > a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 
@@ -235,4 +242,3 @@ main[role="content-wrapper"] > div > section:nth-child(4n+5) > figure {
         }
     }
 }
-

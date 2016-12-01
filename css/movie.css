@@ -1,6 +1,9 @@
 /**
  * import lib less
  */
+/*
+ * import reset 统一浏览器默认样式
+ */
 html,
 body {
   line-height: 1.5;
@@ -140,15 +143,83 @@ q:after {
   *zoom: 1;
 }
 /*
+ * 颜色
+ */
+/**
+ * 主题红
+ */
+/**
+ * 主题红
+ */
+/**
+ * 文字黑
+ */
+/*
+ * 响应式布局
+ */
+/*
+ * 定义变量 @screen-size-min 屏幕最小宽度
+ *
+ * sm : 768px  小屏幕
+ * md : 992px  中屏幕
+ * lg : 1200px 大屏幕
+ *
+ */
+/*
+ *  类container 定义容器响应式宽度
+ *
+ *  padding-right/left : 15px
+ *  width : 750px(sm) / 970px(md) / 1170px(lg)
+ */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/*
+ * 小屏幕  响应式处理
+ *
+ * 992px > @screnn-sm-min > 768px 
+ *
+ */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/*
+ * 中屏幕  响应式处理
+ *
+ * 1200px > @screnn-md-min > 992px 
+ *
+ */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/*
+ * 大屏幕  响应式处理
+ *
+ * @screnn-lg-min > 1200px 
+ *
+ */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/*
 * a 无下划线 鼠标变为指向
 * 
 * @param {text-decoration} none
 * @param {cursor} pointer
 */
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
+/*a{
+	text-decoration: none;
+	cursor: pointer;
+}*/
 /**
  * hover style definition
  *
@@ -361,39 +432,11 @@ body {
   overflow-y: auto;
 }
 /**
-* custome variable
-* font-family / color
-*/
-/**
 * import lib font
 */
 @font-face {
-  font-family: 'custome';
+  font-family: '0X0001';
   src: url(_font/title.woff2);
-}
-/*
-* 
-*/
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
 }
 section {
   width: 48%;

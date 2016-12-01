@@ -1,0 +1,350 @@
+/**
+ * import lib less
+ */
+
+@import url(./_base/_commonStyle/_common.less);
+@import url(./_base/header.less);
+@import url(./_base/footer.less);
+body {
+    overflow-y: auto;
+}
+
+
+/**
+* import lib font
+*/
+
+@customeFont: "0X0001";
+@font-face {
+    font-family: @customeFont;
+    src: url(./_font/title.woff2);
+}
+
+
+/**
+ * main content
+ *
+ */
+
+main[role="content"] {
+    padding-top: 40px;
+    padding-bottom: 70px;
+}
+
+//音乐页标题内容
+section[role="subheader"] {
+    padding-bottom: 120px;
+    > div {
+        margin-top: 20px;
+    }
+    //标题文字
+    div[role="title"] {
+        position: relative;
+        img {
+            position: absolute;
+            top: 45px;
+            left: 30px;
+            height: 36px;
+            width: 36px;
+            cursor: pointer;
+        }
+        //
+        p {
+            padding-top: 50px;
+            font-size: 20px;
+            font-weight: 500;
+            text-indent: 40px;
+            color: @colorTextBlack;
+            //
+            padding-right: 25px;
+            padding-left: 15px;
+        }
+    }
+    //推荐歌曲
+    div[role="recommend"] {
+        > h1 {
+            margin-top: 0;
+            font-size: 32px;
+            font-family: @customeFont;
+            color: @colorTextBlack;
+        }
+        div[role="bgm"] {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 5px;
+            max-width: 500px;
+            img[role="bgmcover"] {
+                display: block;
+                float: left;
+                height: 136px;
+                width: 136px;
+                margin-right: 20px;
+            }
+            div[role="bgmcontrol"] {
+                h4 {
+                    font-size: 18px;
+                    margin-top: 0;
+                }
+                h4 >span {
+                    font-size: 14px;
+                }
+                div.bgmdetail {
+                    margin-top: 20px;
+                }
+                div.musictag {
+                    float: left;
+                    padding-right: 30px;
+                    a {
+                        padding: 1px 3px;
+                        border-radius: 3px;
+                        margin-left: 3px;
+                        color: #fff;
+                        background-color: #fa6374;
+                        text-decoration: none;
+                    }
+                }
+                ul.musicrate {
+                    //
+                    li {
+                        cursor: pointer;
+                        display: inline-block;
+                        margin-left: 1px;
+                        height: 16px;
+                        width: 16px;
+                        background: url(./_images/music/star_rated.png) no-repeat center;
+                        background-size: cover;
+                    }
+                    //
+                    li.hollow {
+                        background-image: url(./_images/music/star_hollow.png);
+                    }
+                }
+            }
+            audio {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+//专辑容器figure
+figure[role="album"] {
+    padding-bottom: 40px;
+}
+
+//专辑容器figure悬浮状态
+figure[role="album"]:hover {
+    > figcaption {
+        opacity: 1;
+        transform: translateY(-5px);
+        //
+        div.moreinfo {
+            height: 20px;
+        }
+        //
+        h1 {
+            overflow: visible;
+            white-space: normal;
+        }
+    }
+    > section {
+        transform: translateY(-5px);
+    }
+    > section:before {
+        transform: translateY(5px);
+        opacity: 1;
+    }
+}
+
+//专辑容器播放状态
+figure[role="album"].playing {
+    > figcaption {
+        opacity: 1;
+        transform: translateY(-5px);
+        //
+        h1 {
+            color: #fa6374;
+            font-size: 19px;
+        }
+        //
+        div.moreinfo {
+            height: 20px;
+        }
+        //
+        span.author > i {
+            color: #fa6374;
+        }
+    }
+    > section {
+        transform: translateY(-5px);
+    }
+    > section:before {
+        transform: translateY(5px);
+        opacity: 1;
+    }
+}
+
+//专辑标题figcaption
+figure[role="album"] > figcaption {
+    width: 206px;
+    opacity: 1;
+    cursor: default;
+    //
+    transition: 0.6s;
+    //专辑名
+    h1 {
+        text-align: center;
+        padding: 0 0 1px 0;
+        margin: 10px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        //
+        font-size: 16px;
+
+        color: #585858;
+        transition: 0.6s;
+    }
+    h1.sm{
+    	font-size: 12px;
+    }
+    //更多信息
+    div.moreinfo {
+        overflow: hidden;
+        padding-left: 5px;
+        color: #585858;
+        font-size: 14px;
+        margin-bottom: 10px;
+        //
+        height: 0px;
+        transition: 0.6s;
+        transition-property: height;
+    }
+    //分类信息
+    div.moreinfo > a {
+        padding: 1px 3px;
+        border-radius: 3px;
+        margin-left: 3px;
+        color: #fff;
+        background-color: #fa6374;
+        text-decoration: none;
+    }
+    //作者
+    div.moreinfo > span.author {
+        float: right;
+        //
+        i {
+            font-style: normal;
+            transition: 0.4s;
+            transition-property: color;
+        }
+        //"b"
+        i:nth-of-type(1) {
+            transition-delay: 0.2s;
+        }
+        //"y"
+        i:nth-of-type(2) {
+            transition-delay: 0.6s;
+        }
+        //"."
+        i:nth-of-type(3) {
+            transition-delay: 1s;
+            padding-right: 1px;
+        }
+        //author name
+        i:nth-of-type(4) {
+            transition-delay: 2s;
+            transition-timing-function: ease-out;
+        }
+    }
+}
+
+//专辑音乐section
+figure[role="album"] > section {
+    position: relative;
+    height: 206px;
+    width: 206px;
+    //
+    transition: 0.6s;
+    transition-property: transform;
+    //
+    &:before {
+        content: " ";
+        z-index: -1;
+        position: absolute;
+        top: 100%;
+        left: 5%;
+        height: 10px;
+        width: 90%;
+        background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+        opacity: 0;
+        transition: 0.6s;
+        transition-property: transform opacity;
+    }
+}
+
+//CD背景图
+figure[role="album"] > section > img[role="albumcover"] {
+    height: 136px;
+    width: 136px;
+    margin: 34px 0 0 34px;
+}
+
+//CD背景旋转动画
+@keyframes musicplaying {
+    form {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+//CD背景图播放时转动
+figure[role="album"] > section > img[role="albumcover"].playing {
+    animation: musicplaying 6s infinite linear;
+}
+
+//CD黑胶片背景
+figure[role="album"] > section > span[role="albumdisk"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 205px;
+    width: 205px;
+    background: url(./_images/music/coverall.png) no-repeat center;
+    background-position: -140px -580px;
+}
+
+//播放键
+figure[role="album"] > section > i[role="mediacontrol"] {
+    position: absolute;
+    display: block;
+    top: 85px;
+    left: 85px;
+    width: 36px;
+    height: 36px;
+    background: url(./_images/music/playbar.png) no-repeat;
+    cursor: pointer;
+    //播放按键icon
+    background-position: 0 -204px;
+    &:hover {
+        background-position: -40px -204px;
+    }
+}
+
+//暂停键
+figure[role="album"] > section > i[role="mediacontrol"].paused {
+    background-position: 0 -165px;
+    //
+    &:hover {
+        background-position: -40px -165px;
+    }
+}
+
+//不显示音乐控件
+audio {
+    display: none;
+}

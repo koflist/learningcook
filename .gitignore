@@ -24,3 +24,10 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+
+
+# Custome IGnore
+._gulp/node_modules/*
+.musics/*

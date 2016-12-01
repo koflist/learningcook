@@ -1,0 +1,66 @@
+/*
+ * 定义变量 @screen-size-min 屏幕最小宽度
+ *
+ * sm : 768px  小屏幕
+ * md : 992px  中屏幕
+ * lg : 1200px 大屏幕
+ *
+ */
+
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
+/*
+ *  类container 定义容器响应式宽度
+ *
+ *  padding-right/left : 15px
+ *  width : 750px(sm) / 970px(md) / 1170px(lg)
+ */
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/*
+ * 小屏幕  响应式处理
+ *
+ * 992px > @screnn-sm-min > 768px 
+ *
+ */
+
+@media (min-width: @screen-sm-min) {
+    .container {
+        width: 750px;
+    }
+}
+
+/*
+ * 中屏幕  响应式处理
+ *
+ * 1200px > @screnn-md-min > 992px 
+ *
+ */
+
+@media (min-width: @screen-md-min) {
+    .container {
+        width: 970px;
+    }
+}
+
+/*
+ * 大屏幕  响应式处理
+ *
+ * @screnn-lg-min > 1200px 
+ *
+ */
+
+@media (min-width: @screen-lg-min) {
+    .container {
+        width: 1170px;
+    }
+}

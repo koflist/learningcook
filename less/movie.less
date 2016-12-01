@@ -2,9 +2,8 @@
  * import lib less
  */
 
-@import url(./_base/reset.less);
-@import url(./_base/default.less);
-@import url(./_base/hover.less);
+@import url(./_base/_commonStyle/_common.less);
+@import url(./_base/_customeStyle/hover.less);
 @import url(./_base/header.less);
 @import url(./_base/footer.less);
 body {
@@ -13,53 +12,13 @@ body {
 
 
 /**
-* custome variable
-* font-family / color
-*/
-
-@customeFont: 'custome';
-@themeColorRed: #FB5353;
-
-/**
 * import lib font
 */
 
+@customeFont: '0X0001';
 @font-face {
     font-family: @customeFont;
     src: url(./_font/title.woff2);
-}
-
-
-/*
-* 
-*/
-
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-@screen-sm-min: 768px;
-@screen-md-min: 992px;
-@screen-lg-min: 1200px;
-@media (min-width: @screen-sm-min) {
-    .container {
-        width: 750px;
-    }
-}
-
-@media (min-width: @screen-md-min) {
-    .container {
-        width: 970px;
-    }
-}
-
-@media (min-width: @screen-lg-min) {
-    .container {
-        width: 1170px;
-    }
 }
 
 section {
