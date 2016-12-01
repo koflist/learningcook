@@ -29,5 +29,5 @@ Temporary Items
 
 
 # Custome IGnore
-._gulp/node_modules/*
-.musics/*
+_gulp/node_modules/*
+musics/*
